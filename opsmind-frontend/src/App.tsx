@@ -4,27 +4,26 @@ import StudentLayout from "./layouts/StudentLayout";
 import TechnicianLayout from "./layouts/TechnicianLayout";
 import AdminLayout from "./layouts/AdminLayout";
 
-// Student pages
+// student pages
 import StudentDashboard from "./pages/student/Dashboard";
 import MyTickets from "./pages/student/MyTickets";
 import NewTicket from "./pages/student/NewTicket";
 
-// Technician pages
-import TicketQueue from "./pages/technician/TicketQueue";
-import SLAView from "./pages/technician/SLAView";
-import Workload from "./pages/technician/Workload";
+// technician pages
+import TechQueue from "./pages/technician/TicketQueue";
+import TechWorkload from "./pages/technician/Workload";
+import TechSlaRisks from "./pages/technician/SLAView";
 
-// Admin pages
+// admin pages
 import AdminDashboard from "./pages/admin/Dashboard";
-import Users from "./pages/admin/Users";
-import Inventory from "./pages/admin/Inventory";
-import Categories from "./pages/admin/Categories";
-import SLAs from "./pages/admin/SLAs";
+import AdminUsers from "./pages/admin/Users";
+import AdminAnalytics from "./pages/admin/Analytics";
+import AdminSlas from "./pages/admin/SLAs";
 
-function App() {
+export default function App() {
   return (
     <Routes>
-      {/* Student / Faculty / Employee Portal */}
+      {/* STUDENT / FACULTY / EMPLOYEE */}
       <Route path="/student" element={<StudentLayout />}>
         <Route path="dashboard" element={<StudentDashboard />} />
         <Route path="tickets" element={<MyTickets />} />
@@ -32,28 +31,25 @@ function App() {
         <Route index element={<Navigate to="dashboard" replace />} />
       </Route>
 
-      {/* Technician Portal */}
+      {/* TECHNICIAN */}
       <Route path="/technician" element={<TechnicianLayout />}>
-        <Route path="queue" element={<TicketQueue />} />
-        <Route path="sla" element={<SLAView />} />
-        <Route path="workload" element={<Workload />} />
+        <Route path="queue" element={<TechQueue />} />
+        <Route path="workload" element={<TechWorkload />} />
+        <Route path="sla-risks" element={<TechSlaRisks />} />
         <Route index element={<Navigate to="queue" replace />} />
       </Route>
 
-      {/* Admin Portal */}
+      {/* ADMIN */}
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<AdminDashboard />} />
-        <Route path="users" element={<Users />} />
-        <Route path="inventory" element={<Inventory />} />
-        <Route path="categories" element={<Categories />} />
-        <Route path="slas" element={<SLAs />} />
+        <Route path="users" element={<AdminUsers />} />
+        <Route path="analytics" element={<AdminAnalytics />} />
+        <Route path="slas" element={<AdminSlas />} />
         <Route index element={<Navigate to="dashboard" replace />} />
       </Route>
 
-      {/* Default redirect */}
+      {/* DEFAULT REDIRECT */}
       <Route path="*" element={<Navigate to="/student/dashboard" replace />} />
     </Routes>
   );
 }
-
-export default App;

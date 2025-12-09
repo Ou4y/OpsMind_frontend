@@ -1,17 +1,28 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { Sidebar, type NavItem } from "./Sidebar";
+import { Topbar } from "./Topbar";
+
+const techNav: NavItem[] = [
+  { label: "Queue", to: "/technician/queue" },
+  { label: "Workload", to: "/technician/workload" },
+  { label: "SLA Risks", to: "/technician/sla-risks" },
+];
+
+const techTitles: Record<string, string> = {
+  "/technician/queue": "Ticket Queue",
+  "/technician/workload": "Technician Workload",
+  "/technician/sla-risks": "SLA Risks",
+};
 
 export default function TechnicianLayout() {
+  const location = useLocation();
+  const title = techTitles[location.pathname] ?? "Technician Portal";
+
   return (
-    <div>
-      <header>IT Technician Portal</header>
-
-      <nav style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
-        <NavLink to="/technician/queue">Ticket Queue</NavLink>
-        <NavLink to="/technician/sla">SLA Monitor</NavLink>
-        <NavLink to="/technician/workload">Workload</NavLink>
-      </nav>
-
-      <main>
+    <div className="bg-background-light min-h-screen">
+      <Sidebar items={techNav} title="OpsMind – IT" />
+      <Topbar title={title} roleLabel="IT Technician" />
+      <main className="pt-20 pl-72 pr-6 pb-6">
         <Outlet />
       </main>
     </div>

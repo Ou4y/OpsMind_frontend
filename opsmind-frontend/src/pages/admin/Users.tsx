@@ -1,3 +1,3 @@
-export default function Users() {
-  return <div>Users Management</div>;
+export default function AdminUsers() {
+  return <div>User management</div>;
 }

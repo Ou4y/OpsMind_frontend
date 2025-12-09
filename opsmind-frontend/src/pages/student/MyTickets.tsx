@@ -1,3 +1,3 @@
 export default function MyTickets() {
-  return <div>My Tickets</div>;
+  return <div>Student My Tickets page</div>;
 }

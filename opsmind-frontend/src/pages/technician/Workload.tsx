@@ -1,3 +1,3 @@
-export default function Workload() {
-  return <div>Technician Workload</div>;
+export default function TechWorkload() {
+  return <div>Technician workload view</div>;
 }

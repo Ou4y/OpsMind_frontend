@@ -1,3 +1,3 @@
-export default function SLAView() {
-  return <div>SLA Monitor</div>;
+export default function TechSlaRisks() {
+  return <div>SLA risk overview</div>;
 }

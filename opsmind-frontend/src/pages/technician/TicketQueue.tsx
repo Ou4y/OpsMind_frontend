@@ -1,3 +1,3 @@
-export default function TicketQueue() {
-  return <div>Technician Ticket Queue</div>;
+export default function TechQueue() {
+  return <div>Technician ticket queue</div>;
 }
