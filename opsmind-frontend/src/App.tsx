@@ -1,35 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Navigate } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import StudentLayout from "./layouts/StudentLayout";
+import TechnicianLayout from "./layouts/TechnicianLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
+import { RequireAuth } from "./auth/RequireAuth";
+
+// student pages
+import StudentDashboard from "./pages/student/Dashboard";
+import MyTickets from "./pages/student/MyTickets";
+import NewTicket from "./pages/student/NewTicket";
+
+// technician pages
+import TechQueue from "./pages/technician/TicketQueue";
+import TechWorkload from "./pages/technician/Workload";
+import TechSlaRisks from "./pages/technician/SLAView";
+
+// admin pages
+import AdminDashboard from "./pages/admin/Dashboard";
+import AdminUsers from "./pages/admin/Users";
+import AdminAnalytics from "./pages/admin/Analytics";
+import AdminSlas from "./pages/admin/SLAs";
+
+// auth pages
+import Login from "./pages/auth/Login";
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      {/* LOGIN (public) */}
+      <Route path="/login" element={<Login />} />
 
-export default App
+      {/* STUDENT / FACULTY / EMPLOYEE */}
+      <Route
+        path="/student"
+        element={
+          <RequireAuth allowedRoles={["student"]}>
+            <StudentLayout />
+          </RequireAuth>
+        }
+      >
+        <Route path="dashboard" element={<StudentDashboard />} />
+        <Route path="tickets" element={<MyTickets />} />
+        <Route path="tickets/new" element={<NewTicket />} />
+        <Route index element={<Navigate to="dashboard" replace />} />
+      </Route>
+
+      {/* TECHNICIAN */}
+      <Route
+        path="/technician"
+        element={
+          <RequireAuth allowedRoles={["technician"]}>
+            <TechnicianLayout />
+          </RequireAuth>
+        }
+      >
+        <Route path="queue" element={<TechQueue />} />
+        <Route path="workload" element={<TechWorkload />} />
+        <Route path="sla-risks" element={<TechSlaRisks />} />
+        <Route index element={<Navigate to="queue" replace />} />
+      </Route>
+
+      {/* ADMIN */}
+      <Route
+        path="/admin"
+        element={
+          <RequireAuth allowedRoles={["admin"]}>
+            <AdminLayout />
+          </RequireAuth>
+        }
+      >
+        <Route path="dashboard" element={<AdminDashboard />} />
+        <Route path="users" element={<AdminUsers />} />
+        <Route path="analytics" element={<AdminAnalytics />} />
+        <Route path="slas" element={<AdminSlas />} />
+        <Route index element={<Navigate to="dashboard" replace />} />
+      </Route>
+
+      {/* DEFAULT REDIRECT */}
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
+  );
+}
