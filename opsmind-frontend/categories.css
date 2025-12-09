@@ -1,0 +1,227 @@
+/* src/pages/admin/Categories.css */
+
+/* --- Container --- */
+.categories-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+}
+
+/* --- Main Card --- */
+.categories-card {
+  background-color: #f9fafb; /* Light gray background */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 400px;
+}
+
+.cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.cat-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.cat-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.cat-icon-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-add {
+  color: #2563eb; /* Blue for add button */
+}
+
+/* --- List Items --- */
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.category-item:hover {
+  background-color: #f3f4f6;
+}
+
+.category-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Visual Colored Dot/Icon for Category */
+.category-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.category-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.category-desc {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* Badge for ticket count */
+.count-badge {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 12px;
+}
+
+/* --- Modal Overlay --- */
+.cat-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Sheet style animation */
+  z-index: 1000;
+  padding-bottom: 40px;
+}
+
+.cat-modal-card {
+  background-color: white;
+  width: 100%;
+  max-width: 600px; /* Smaller width for simple forms */
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-out;
+}
+
+/* --- Modal Form --- */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #2563eb;
+}
+
+/* Color Picker Row */
+.color-options {
+  display: flex;
+  gap: 12px;
+}
+
+.color-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.selected {
+  border-color: #111827; /* Dark border to show selection */
+}
+
+/* Modal Actions */
+.cat-modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn-delete {
+  background-color: #fef2f2;
+  color: #ef4444;
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #2563eb;
+  color: white;
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
