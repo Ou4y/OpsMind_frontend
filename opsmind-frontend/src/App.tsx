@@ -20,14 +20,17 @@ import AdminUsers from "./pages/admin/Users";
 import AdminAnalytics from "./pages/admin/Analytics";
 import AdminSlas from "./pages/admin/SLAs";
 
+
 export default function App() {
   return (
     <Routes>
       {/* STUDENT / FACULTY / EMPLOYEE */}
       <Route path="/student" element={<StudentLayout />}>
         <Route path="dashboard" element={<StudentDashboard />} />
-        <Route path="tickets" element={<MyTickets />} />
-        <Route path="tickets/new" element={<NewTicket />} />
+        <Route path="tickets/" element={<MyTickets />} />
+        <Route path="tickets/:new" element={<NewTicket />} />
+        
+
         <Route index element={<Navigate to="dashboard" replace />} />
       </Route>
 
