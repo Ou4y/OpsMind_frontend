@@ -1,0 +1,202 @@
+/* technician-workload.css */
+
+.workload-root {
+  padding: 20px;
+  background: transparent;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.workload-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cards-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.stat-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eef2f6;
+}
+
+.stat-label {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.stat-sub {
+  color: #6b7280;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.charts-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.chart-card {
+  flex: 1;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eef2f6;
+}
+
+.chart-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+.chart-svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.donut-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-label {
+  color: #6b7280;
+}
+
+.sla-chart-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #eef2f6;
+  margin-bottom: 18px;
+}
+
+.sla-chart-card .chart-title {
+  margin-bottom: 12px;
+}
+
+.sla-chart-card .chart-wrapper {
+  overflow-x: auto;
+}
+
+.workload-table-card {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eef2f6;
+}
+
+.table-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.workload-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workload-table thead th {
+  text-align: left;
+  color: #6b7280;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.workload-table tbody td {
+  padding: 10px 12px;
+  border-top: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+
+.tech-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.sla-cell {
+  color: #10b981;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .cards-row,
+  .charts-row {
+    flex-direction: column;
+  }
+
+  .donut-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chart-wrapper {
+    min-height: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workload-root {
+    padding: 12px;
+  }
+
+  .workload-title {
+    font-size: 18px;
+  }
+
+  .chart-wrapper {
+    overflow-x: auto;
+    min-height: 120px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+}
