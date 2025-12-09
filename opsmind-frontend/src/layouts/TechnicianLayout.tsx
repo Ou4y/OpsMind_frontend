@@ -21,7 +21,7 @@ export default function TechnicianLayout() {
   return (
     <div className="bg-background-light min-h-screen">
       <Sidebar items={techNav} title="OpsMind – IT" />
-      <Topbar title={title} roleLabel="IT Technician" />
+      <Topbar title={title} rolelabel="IT Technician" />
       <main className="pt-20 pl-72 pr-6 pb-6">
         <Outlet />
       </main>

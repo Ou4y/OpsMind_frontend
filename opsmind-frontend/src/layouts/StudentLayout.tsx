@@ -21,7 +21,8 @@ export default function StudentLayout() {
   return (
     <div className="bg-background-light min-h-screen">
       <Sidebar items={studentNav} title="OpsMind – Student" />
-      <Topbar title={title} roleLabel="Student / Faculty / Employee" />
+      <Topbar title={title} rolelabel="Student / Faculty / Employee" />
+
       <main className="pt-20 pl-72 pr-6 pb-6">
         <Outlet />
       </main>
