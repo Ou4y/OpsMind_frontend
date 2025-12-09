@@ -1,0 +1,164 @@
+/* technician.css - styles for Technician Queue component */
+.tech-root {
+  width: 100%;
+  height: 100%;
+  background: #f6f8fa;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.tech-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(16,24,40,0.04);
+  margin-bottom: 14px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.tech-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.tech-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #e6e9ee;
+  background: #f3f6f9;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.chev { font-size: 12px; opacity: 0.8 }
+
+.sort-row { color: #6b7280; font-size: 14px }
+
+.tech-list { display: flex; flex-direction: column; gap: 12px; margin-top: 6px }
+
+.ticket-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 0 rgba(16,24,40,0.04);
+  border: 1px solid #eef2f6;
+}
+
+.ticket-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px }
+.ticket-id { color:#6b7280; font-size:13px }
+
+.ticket-title { margin: 4px 0 8px 0; font-size:16px; color:#111827 }
+
+.ticket-bottom { display:flex; justify-content:space-between; align-items:center; color:#6b7280; font-size:13px }
+
+.ticket-time { color:#111827; font-weight:600 }
+
+.badge { padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px }
+.badge-high { background:#fff1f2; color:#b91c1c }
+.badge-medium { background:#fff7ed; color:#92400e }
+.badge-low { background:#ecfdf5; color:#065f46 }
+
+.fab {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.18);
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .tech-root { padding: 12px }
+  .tech-header { padding: 12px }
+  .ticket-title { font-size: 15px }
+}
+
+/* Notification tabs styles */
+.notif-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 24px;
+  padding: 8px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notif-tabs .pill-wrap {
+  flex: 1;
+  display: inline-flex;
+  gap: 8px;
+  background: #f3f6fb;
+  padding: 6px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.notif-tabs .pill-wrap button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #4b5563;
+}
+
+.notif-tabs .pill-wrap button.active {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.notif-tabs .right-space {
+  width: 200px;
+  text-align: right;
+  color: #9ca3af;
+  font-size: 12px;
+}

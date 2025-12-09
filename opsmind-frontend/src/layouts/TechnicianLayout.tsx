@@ -6,12 +6,17 @@ const techNav: NavItem[] = [
   { label: "Queue", to: "/technician/queue" },
   { label: "Workload", to: "/technician/workload" },
   { label: "SLA Risks", to: "/technician/sla-risks" },
+  { label: "Technician Console", to: "/technician/TechnicianConsole" },
+  { label: "Technician Notification Center", to: "/technician/TechnicianNotificationCenter" },
 ];
 
 const techTitles: Record<string, string> = {
   "/technician/queue": "Ticket Queue",
   "/technician/workload": "Technician Workload",
   "/technician/sla-risks": "SLA Risks",
+  "/technician/TechnicianConsole": "Technician Console",
+  "/technician/TechnicianNotificationCenter": "Technician Notification Center",
+  
 };
 
 export default function TechnicianLayout() {

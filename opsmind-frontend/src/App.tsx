@@ -15,6 +15,9 @@ import NewTicket from "./pages/student/NewTicket";
 import TechQueue from "./pages/technician/TicketQueue";
 import TechWorkload from "./pages/technician/Workload";
 import TechSlaRisks from "./pages/technician/SLAView";
+import TechConsole from "./pages/technician/TechnicianConsole";
+import TechNotificationCenter from "./pages/technician/TechnicianNotificationCenter";
+import TechnicianTicketDetails from "./pages/technician/TechnicianTicketDetails";
 
 // admin pages
 import AdminDashboard from "./pages/admin/Dashboard";
@@ -60,6 +63,10 @@ export default function App() {
         <Route path="queue" element={<TechQueue />} />
         <Route path="workload" element={<TechWorkload />} />
         <Route path="sla-risks" element={<TechSlaRisks />} />
+        <Route path="TechnicianConsole" element={<TechConsole />}/>
+        <Route path="TechnicianNotificationCenter" element={<TechNotificationCenter />}/>
+        <Route path="TechnicianTicketDetails/:id" element={<TechnicianTicketDetails />}/>
+
         <Route index element={<Navigate to="queue" replace />} />
       </Route>
 
