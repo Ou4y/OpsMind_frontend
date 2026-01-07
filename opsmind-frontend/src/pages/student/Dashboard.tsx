@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 export default function StudentDashboard() {
   const navigate = useNavigate();
 
-  // 🔥 نفس تذاكر MyTickets بالظبط
   const tickets = [
     {
       id: "#IT-84321",

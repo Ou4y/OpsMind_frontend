@@ -36,7 +36,7 @@ export default function MyTickets() {
 ];
 
 
-  // 🎨 Category Colors
+  //  Category Colors
   const categoryColors: any = {
     Network: "bg-blue-100 text-blue-700 border border-blue-300",
     Hardware: "bg-amber-100 text-amber-700 border border-amber-300",
@@ -44,14 +44,14 @@ export default function MyTickets() {
     Account: "bg-purple-100 text-purple-700 border border-purple-300",
   };
 
-  // 🎨 Status Colors
+  //  Status Colors
   const statusColors: any = {
     OPEN: "bg-green-100 text-green-700",
     "IN PROGRESS": "bg-amber-100 text-amber-700",
     RESOLVED: "bg-slate-200 text-slate-700",
   };
 
-  // 🔍 Apply Search + Filter
+  //  Apply Search + Filter
   const filteredTickets = tickets.filter((t) => {
     const matchFilter = filter === "All" || t.status === filter;
     const matchSearch =
