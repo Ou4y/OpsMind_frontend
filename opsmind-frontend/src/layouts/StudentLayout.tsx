@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Sidebar, type NavItem } from "./Sidebar";
 import { Topbar } from "./Topbar";
+import clsx from "clsx";
 
 const studentNav: NavItem[] = [
   { label: "Dashboard", to: "/student/dashboard" },
@@ -9,22 +11,45 @@ const studentNav: NavItem[] = [
 ];
 
 const studentTitles: Record<string, string> = {
-  "/student/dashboard": "Student Dashboard",
+  "/student/dashboard": "Dashboard",
   "/student/tickets": "My Tickets",
   "/student/tickets/new": "Create Ticket",
 };
 
 export default function StudentLayout() {
   const location = useLocation();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   const title = studentTitles[location.pathname] ?? "Student Portal";
 
   return (
-    <div className="bg-background-light min-h-screen">
-      <Sidebar items={studentNav} title="OpsMind – Student" />
-      <Topbar title={title} rolelabel="Student / Faculty / Employee" />
+    <div className="min-h-screen bg-slate-50">
+      {/* Sidebar */}
+      <Sidebar
+        items={studentNav}
+        title="Student Portal"
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+      />
 
-      <main className="pt-20 pl-72 pr-6 pb-6">
-        <Outlet />
+      {/* Topbar */}
+      <Topbar
+        title={title}
+        roleLabel="Student / Faculty / Employee"
+        onMenuClick={() => setSidebarOpen(true)}
+      />
+
+      {/* Main Content */}
+      <main
+        className={clsx(
+          "min-h-screen pt-20 pb-8 px-4 sm:px-6 lg:px-8",
+          "lg:pl-80", // Account for sidebar on large screens (72 sidebar + 8 padding)
+          "transition-all duration-300"
+        )}
+      >
+        <div className="max-w-6xl mx-auto">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
